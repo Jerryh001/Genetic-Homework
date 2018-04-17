@@ -1,27 +1,5 @@
+#include "stdafx.h"
 #include "GeneticPoly.h"
-#include<random>
-#include<algorithm>
-#include<iostream>
-double GeneticPoly::EvaluatePoly(const double& x1, const double& x2)
-{
-	const double a = 1;
-	const double b = 5.1 / ((4 * M_PI) *(4 * M_PI));
-	const double c = 5 / M_PI;
-	const double d = 6;
-	const double e = 10;
-	const double f = 1 / (8 * M_PI);
-	return a * (x2 - b * x1*x1 + c * x1 - d)*(x2 - b * x1*x1 + c * x1 - d) + e * (1 - f)*cos(x1) + e;
-}
-
-double GeneticPoly::BinToDouble(const uint32_t & in, const int& bits, const double & lower, const double & upper)
-{
-	return round((((upper - lower) / (1 << bits)*(in&((1 << bits) - 1))) + lower) * 100) / 100;
-}
-
-uint32_t GeneticPoly::DoubleToBin(const double &in, const int & bits, const double & lower, const double & upper)
-{
-	return round((in - lower) / ((upper - lower) / (1 << bits)));
-}
 
 void GeneticPoly::OnePointCross(Data & a, Data & b)
 {
@@ -36,9 +14,24 @@ void GeneticPoly::OnePointCross(Data & a, Data & b)
 	}
 }
 
+void GeneticPoly::Run()
+{
+	start_time = clock();
+	Initial();
+	Evaluate();
+	while (!IsTerminate())
+	{
+		turn++;
+		Select();
+		Crossover();
+		Mutation();
+		Evaluate();
+	}
+	ShowResult();
+}
 void GeneticPoly::Initial()
 {
-	uniform_int_distribution<uint32_t> distribution(0, (1 << 11)-1);
+	uniform_int_distribution<uint32_t> distribution(0, (1 << 11) - 1);
 	for (Data& d : data)
 	{
 		d.x[0] = distribution(generator);
@@ -50,17 +43,16 @@ void GeneticPoly::Evaluate()
 {
 	for (Data& d : data)
 	{
-		double x1 = BinToDouble(d.x[0], 11, -5, 10);
-		double x2 = BinToDouble(d.x[1], 11, 0, 15);
-		d.value = EvaluatePoly(x1, x2);
+		Eval(d);
 	}
 	sort(data.begin(), data.end(), [&](Data a, Data b) {return a.value > b.value; });
-	if (turn == 0 || best.value>data.back().value)
+	if (turn == 0 || best.value > data.back().value)
 	{
 		best = data.back();
-		cout << "turn=" << turn << endl ;
-		ShowResult();
-		cout<< endl;
+		if (abs(best.value - 0.3979) < 1e-6)
+		{
+			ShowResult();
+		}
 	}
 }
 
@@ -81,7 +73,7 @@ void GeneticPoly::Select()
 		score[0] = 1;
 		for (int i = 1; i < population; i++)
 		{
-			score[i] = (basevalue-data[i].value) / cent + score[i - 1];
+			score[i] = (basevalue - data[i].value) / cent + score[i - 1];
 		}
 	}
 
@@ -102,18 +94,13 @@ void GeneticPoly::Select()
 	data = temp;
 }
 
-void GeneticPoly::Alter()
-{
-	Crossver();
-	Mutation();
-}
 
-void GeneticPoly::Crossver()
+void GeneticPoly::Crossover()
 {
 	random_shuffle(data.begin(), data.end());
 	uniform_real_distribution<double> rand_cross(0, 1);
-	
-	for (int i = 0; i < population; i+=2)
+
+	for (int i = 0; i < population; i += 2)
 	{
 		if (rand_cross(generator) > Pc) continue;
 		OnePointCross(data[i], data[i + 1]);
@@ -142,13 +129,11 @@ void GeneticPoly::Mutation()
 
 bool GeneticPoly::IsTerminate()
 {
-	return turn >= 100000;
+	return turn >= 10000;
 }
 
 GeneticPoly::GeneticPoly()
 {
-	Pc = 0.7;
-	Pm = 0.05;
 }
 
 
@@ -158,8 +143,10 @@ GeneticPoly::~GeneticPoly()
 
 void GeneticPoly::ShowResult()
 {
-	cout << "x1=" << BinToDouble(best.x[0], 11, -5, 10) << endl
+	cout << "turn=" << turn << endl
+		<< "x1=" << BinToDouble(best.x[0], 11, -5, 10) << endl
 		<< "x2=" << BinToDouble(best.x[1], 11, 0, 15) << endl
-		<< "min=" << best.value << endl;
+		<< "min=" << best.value << endl
+		<< "time=" << (clock() - start_time)*1.0 / CLOCKS_PER_SEC << endl << endl;
 
 }
