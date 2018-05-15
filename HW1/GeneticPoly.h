@@ -4,6 +4,7 @@
 #include <cmath>
 #include <array>
 #include<random>
+#include<ctime>
 using namespace std;
 struct Data
 {
@@ -14,7 +15,7 @@ class GeneticPoly :
 	public GeneticBase
 {
 private:
-	default_random_engine generator;
+	default_random_engine generator{ static_cast<long unsigned int>(time(0)) };
 	static const int population = 10;
 	Data best;
 	bool bestupdated = false;
