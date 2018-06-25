@@ -28,7 +28,7 @@ void Genetic::Run()
 
 bool Genetic::IsEnd()
 {
-	return turn >= 2000;
+	return turn >= 1000;
 }
 
 void Genetic::Init()

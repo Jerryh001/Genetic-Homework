@@ -7,7 +7,7 @@ class GData
 	double fitness;
 	void ConvertToValue();
 	void CalculateFitness();
-	void GeneInit(int index, double offset = 0);
+	void GeneInit(int index, double value);
 public:
 	GData();
 	void Evaluate();

@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="來源檔案">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="標頭檔">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="資源檔">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="DataSet">
+      <UniqueIdentifier>{8e218103-f84d-48f2-b994-586fc8816cf6}</UniqueIdentifier>
+      <Extensions>sm</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Schedule.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="DataSet.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Genetic.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="HW4.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Schedule.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="DataSet.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Genetic.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="rcpsp_tt_instances\j301_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j301_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j302_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j302_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j303_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j303_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j304_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j304_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j305_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j305_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j306_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j306_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j307_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j307_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j308_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j308_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j309_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j309_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3010_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3010_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3011_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3011_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3012_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3012_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3013_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3013_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3014_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3014_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3015_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3015_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3016_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3016_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3017_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3017_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3018_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3018_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3019_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3019_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3020_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3020_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3021_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3021_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3022_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3022_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3023_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3023_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3024_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3024_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3025_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3025_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3026_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3026_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3027_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3027_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3028_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3028_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3029_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3029_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3030_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3030_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3031_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3031_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3032_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3032_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3033_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3033_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3034_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3034_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3035_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3035_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3036_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3036_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3037_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3037_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3038_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3038_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3039_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3039_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3040_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3040_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3041_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3041_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3042_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3042_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3043_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3043_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3044_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3044_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3045_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3045_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3046_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3046_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3047_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3047_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3048_a.sm">
+      <Filter>DataSet</Filter>
+    </None>
+    <None Include="rcpsp_tt_instances\j3048_b.sm">
+      <Filter>DataSet</Filter>
+    </None>
+  </ItemGroup>
+</Project>

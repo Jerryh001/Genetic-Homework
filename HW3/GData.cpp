@@ -39,10 +39,17 @@ void GData::CalculateFitness()
 
 GData::GData()
 {
-	for (int i=0;i<2;i++)
+	double x1,x2;
+	double max_x2;
+	do
 	{
-		GeneInit(i);
+		x1 = random() * 6;
+		x2 = random()*sqrt(3);
+		max_x2 = min(x1, 6 - x1) / sqrt(3);
 	}
+	while (x2 > max_x2);
+	GeneInit(0, x1 * 10 / 6);
+	GeneInit(1, x2 * 10 / max_x2);
 }
 
 void GData::Evaluate()
@@ -66,19 +73,14 @@ double GData::GetFitness()
 
 void GData::Mutation(const double& p)
 {
-	for (int i = 0; i < 2; i++)
+	if (random() <= p)
 	{
-		if (random() <= p)
-		{
-			GeneInit(i);
-		}
+		*this = GData();
 	}
-	
 }
 
-void GData::GeneInit(int index, double offset)
+void GData::GeneInit(int index, double value)
 {
-	double value = random() * 10;
 	x[index].fill(0);
 	while (value > 0)
 	{
@@ -104,17 +106,14 @@ void GData::GeneInit(int index, double offset)
 
 void Cross(GData & a, GData & b, const double& p)
 {
-	if (random() <= p)
-	{
 		for (int i = 0; i < 2; i++)
 		{
 			for (int j = 0; j < 10; j++)
 			{
-				if (random() <= 0.5)
+				if (random() <= p)
 				{
 					swap(a.x[i][j], b.x[i][j]);
 				}
 			}
 		}
-	}
 }

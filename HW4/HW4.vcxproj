@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{39F044EE-0EB0-4F0F-9A45-FFC484A9C5AB}</ProjectGuid>
+    <ProjectGuid>{303FDD4F-DDD4-4A31-9197-44C420D20D3D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>HW3Runner</RootNamespace>
+    <RootNamespace>HW4</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -70,18 +70,36 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LinkIncremental>false</LinkIncremental>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
@@ -110,24 +128,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>MaxSpeed</Optimization>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
-    </ClCompile>
-    <Link>
-      <SubSystem>Console</SubSystem>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-    </Link>
-  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
@@ -147,17 +147,121 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DataSet.h" />
+    <ClInclude Include="Genetic.h" />
+    <ClInclude Include="Schedule.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="HW3_Runner.cpp" />
+    <ClCompile Include="DataSet.cpp" />
+    <ClCompile Include="Genetic.cpp" />
+    <ClCompile Include="HW4.cpp" />
+    <ClCompile Include="Schedule.cpp" />
     <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="rcpsp_tt_instances\j3010_a.sm" />
+    <None Include="rcpsp_tt_instances\j3010_b.sm" />
+    <None Include="rcpsp_tt_instances\j3011_a.sm" />
+    <None Include="rcpsp_tt_instances\j3011_b.sm" />
+    <None Include="rcpsp_tt_instances\j3012_a.sm" />
+    <None Include="rcpsp_tt_instances\j3012_b.sm" />
+    <None Include="rcpsp_tt_instances\j3013_a.sm" />
+    <None Include="rcpsp_tt_instances\j3013_b.sm" />
+    <None Include="rcpsp_tt_instances\j3014_a.sm" />
+    <None Include="rcpsp_tt_instances\j3014_b.sm" />
+    <None Include="rcpsp_tt_instances\j3015_a.sm" />
+    <None Include="rcpsp_tt_instances\j3015_b.sm" />
+    <None Include="rcpsp_tt_instances\j3016_a.sm" />
+    <None Include="rcpsp_tt_instances\j3016_b.sm" />
+    <None Include="rcpsp_tt_instances\j3017_a.sm" />
+    <None Include="rcpsp_tt_instances\j3017_b.sm" />
+    <None Include="rcpsp_tt_instances\j3018_a.sm" />
+    <None Include="rcpsp_tt_instances\j3018_b.sm" />
+    <None Include="rcpsp_tt_instances\j3019_a.sm" />
+    <None Include="rcpsp_tt_instances\j3019_b.sm" />
+    <None Include="rcpsp_tt_instances\j301_a.sm" />
+    <None Include="rcpsp_tt_instances\j301_b.sm" />
+    <None Include="rcpsp_tt_instances\j3020_a.sm" />
+    <None Include="rcpsp_tt_instances\j3020_b.sm" />
+    <None Include="rcpsp_tt_instances\j3021_a.sm" />
+    <None Include="rcpsp_tt_instances\j3021_b.sm" />
+    <None Include="rcpsp_tt_instances\j3022_a.sm" />
+    <None Include="rcpsp_tt_instances\j3022_b.sm" />
+    <None Include="rcpsp_tt_instances\j3023_a.sm" />
+    <None Include="rcpsp_tt_instances\j3023_b.sm" />
+    <None Include="rcpsp_tt_instances\j3024_a.sm" />
+    <None Include="rcpsp_tt_instances\j3024_b.sm" />
+    <None Include="rcpsp_tt_instances\j3025_a.sm" />
+    <None Include="rcpsp_tt_instances\j3025_b.sm" />
+    <None Include="rcpsp_tt_instances\j3026_a.sm" />
+    <None Include="rcpsp_tt_instances\j3026_b.sm" />
+    <None Include="rcpsp_tt_instances\j3027_a.sm" />
+    <None Include="rcpsp_tt_instances\j3027_b.sm" />
+    <None Include="rcpsp_tt_instances\j3028_a.sm" />
+    <None Include="rcpsp_tt_instances\j3028_b.sm" />
+    <None Include="rcpsp_tt_instances\j3029_a.sm" />
+    <None Include="rcpsp_tt_instances\j3029_b.sm" />
+    <None Include="rcpsp_tt_instances\j302_a.sm" />
+    <None Include="rcpsp_tt_instances\j302_b.sm" />
+    <None Include="rcpsp_tt_instances\j3030_a.sm" />
+    <None Include="rcpsp_tt_instances\j3030_b.sm" />
+    <None Include="rcpsp_tt_instances\j3031_a.sm" />
+    <None Include="rcpsp_tt_instances\j3031_b.sm" />
+    <None Include="rcpsp_tt_instances\j3032_a.sm" />
+    <None Include="rcpsp_tt_instances\j3032_b.sm" />
+    <None Include="rcpsp_tt_instances\j3033_a.sm" />
+    <None Include="rcpsp_tt_instances\j3033_b.sm" />
+    <None Include="rcpsp_tt_instances\j3034_a.sm" />
+    <None Include="rcpsp_tt_instances\j3034_b.sm" />
+    <None Include="rcpsp_tt_instances\j3035_a.sm" />
+    <None Include="rcpsp_tt_instances\j3035_b.sm" />
+    <None Include="rcpsp_tt_instances\j3036_a.sm" />
+    <None Include="rcpsp_tt_instances\j3036_b.sm" />
+    <None Include="rcpsp_tt_instances\j3037_a.sm" />
+    <None Include="rcpsp_tt_instances\j3037_b.sm" />
+    <None Include="rcpsp_tt_instances\j3038_a.sm" />
+    <None Include="rcpsp_tt_instances\j3038_b.sm" />
+    <None Include="rcpsp_tt_instances\j3039_a.sm" />
+    <None Include="rcpsp_tt_instances\j3039_b.sm" />
+    <None Include="rcpsp_tt_instances\j303_a.sm" />
+    <None Include="rcpsp_tt_instances\j303_b.sm" />
+    <None Include="rcpsp_tt_instances\j3040_a.sm" />
+    <None Include="rcpsp_tt_instances\j3040_b.sm" />
+    <None Include="rcpsp_tt_instances\j3041_a.sm" />
+    <None Include="rcpsp_tt_instances\j3041_b.sm" />
+    <None Include="rcpsp_tt_instances\j3042_a.sm" />
+    <None Include="rcpsp_tt_instances\j3042_b.sm" />
+    <None Include="rcpsp_tt_instances\j3043_a.sm" />
+    <None Include="rcpsp_tt_instances\j3043_b.sm" />
+    <None Include="rcpsp_tt_instances\j3044_a.sm" />
+    <None Include="rcpsp_tt_instances\j3044_b.sm" />
+    <None Include="rcpsp_tt_instances\j3045_a.sm" />
+    <None Include="rcpsp_tt_instances\j3045_b.sm" />
+    <None Include="rcpsp_tt_instances\j3046_a.sm" />
+    <None Include="rcpsp_tt_instances\j3046_b.sm" />
+    <None Include="rcpsp_tt_instances\j3047_a.sm" />
+    <None Include="rcpsp_tt_instances\j3047_b.sm" />
+    <None Include="rcpsp_tt_instances\j3048_a.sm" />
+    <None Include="rcpsp_tt_instances\j3048_b.sm" />
+    <None Include="rcpsp_tt_instances\j304_a.sm" />
+    <None Include="rcpsp_tt_instances\j304_b.sm" />
+    <None Include="rcpsp_tt_instances\j305_a.sm" />
+    <None Include="rcpsp_tt_instances\j305_b.sm" />
+    <None Include="rcpsp_tt_instances\j306_a.sm" />
+    <None Include="rcpsp_tt_instances\j306_b.sm" />
+    <None Include="rcpsp_tt_instances\j307_a.sm" />
+    <None Include="rcpsp_tt_instances\j307_b.sm" />
+    <None Include="rcpsp_tt_instances\j308_a.sm" />
+    <None Include="rcpsp_tt_instances\j308_b.sm" />
+    <None Include="rcpsp_tt_instances\j309_a.sm" />
+    <None Include="rcpsp_tt_instances\j309_b.sm" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
